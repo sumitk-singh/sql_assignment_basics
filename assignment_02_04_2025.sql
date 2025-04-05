@@ -127,3 +127,164 @@ The results should be sorted first by department (alphabetically) and then by sa
 select name, department, salary from employees
 where department in ('IT', 'HR', 'Marketing') and salary > 70000
 order by department asc, salary desc;
+
+
+-- Assignment 03 Dated 04-04-2025
+/*1. Write an SQL query to count the number of employees in each department.*/
+select department, count(name) as number_of_employees_by_department from employees
+group by department;
+
+
+/*2. Write an SQL query to calculate the total salary (SUM(salary)) for each department.*/
+select department, sum(salary) as total_salary from employees
+group by department;
+
+
+/*3. Modify the previous query to display only departments 
+where the total salary expense is greater than 150,000.*/
+select department, sum(salary) as total_salary from employees
+group by department
+having sum(salary)>150000;
+
+/*4. Write a query to find the average salary (AVG(salary)) of employees in each department.*/
+select department, avg(salary) as average_salary from employees
+group by department;
+
+
+/*5. Write a query to count the number of employees in each department 
+and display only departments that have more than 2 employees.*/
+select department, count(name) as number_of_employee from employees
+group by department
+having count(name) >2;
+
+/*6. Write a query to display the highest salary (MAX(salary)) in each department.*/
+select department, max(salary) as max_salary from employees
+group by department;
+
+/*7. Write a query to find departments where the average salary is greater than 60,000.*/
+select department, avg(salary) as average_salary from employees
+group by department
+having avg(salary)> 60000;
+
+
+/*8. Write a query to count employees who joined before 2020, grouped by department.*/
+select department, count(name) as number_of_employees from employees
+where joining_date	< '2020-01-01'
+group by department; 
+
+-- 9. Find the total number of employees in each department.
+select department, count(name) as number_of_employee from employees
+group by department;
+
+
+-- 10. Calculate the total salary paid to employees in each department.
+select department, sum(salary) as total_salary
+from employees
+group by department;
+
+
+-- 11. Find the highest and lowest salary in each department.
+select department, max(salary) as max_salary, min(salary) as min_sal from employees
+group by department;
+
+
+-- 12. Find the average salary of employees in each department.
+select department, avg(salary) as average_salary from employees
+group by department;
+
+
+-- 13. Count how many employees have salaries greater than 60,000 in each department.
+select department, count(*) as high_earners from employees
+where salary > 60000
+group by department;
+
+
+-- 14. Find departments where the total salary expense is more than 150,000.
+select department, sum(salary) as total_salary from employees
+group by department
+having sum(salary) > 150000;
+
+
+-- 15. Find departments where the average salary is greater than 60,000.
+select department, avg(salary) as average_salary from employees
+group by department
+having avg(salary) > 60000;
+
+
+-- 16. Find departments that have more than 3 employees.
+select department, count(name) as employee_count
+from employees
+group by department
+having count(name) > 3;
+
+-- 17. Find departments where the minimum salary is above 50,000.
+select department, min(salary) as minimum_salary from employees
+group by department
+having min(salary) > 50000;
+
+
+-- 18. Find departments that have at least one employee who joined before 2019.
+
+
+
+
+
+-- 19. Find the number of employees who joined each year.
+
+
+
+-- 20. Find the number of employees who joined after 2020, grouped by department.
+
+
+
+-- 21. Find the total salary of employees who joined before 2020, grouped by department.
+
+
+
+-- 22. Find departments where the earliest joining date is before 2018.
+
+
+
+-- 23. Find departments where at least 2 employees joined after 2021.
+
+
+
+-- 24. Find departments where the sum of all salaries exceeds 200,000.
+
+
+
+-- 25. Find the difference between the highest and lowest salary in each department.
+
+
+
+-- 26. Find departments where more than 50% of employees have salaries above 70,000.
+
+
+
+-- 27. Find the average salary of employees who joined before 2019, grouped by department.
+
+
+
+-- 28. Find departments where the total salary of employees who joined after 2020 is greater than 100,000.
+
+
+
+-- 29. Find the top 2 departments with the highest total salary expense.
+
+
+
+-- 30. Find the top 2 departments with the lowest average salary.
+
+
+
+-- 31. Find departments where the total salary is between 100,000 and 200,000.
+
+
+
+-- 32. Find the percentage of total company salary paid to each department.
+
+
+
+-- 33. Find departments where the highest salary is more than double the average salary
+
+
