@@ -230,7 +230,7 @@ having count(joining_date) > 0;
 
 
 -- 19. Find the number of employees who joined each year.
-select 
+
 
 
 -- 20. Find the number of employees who joined after 2020, grouped by department.
