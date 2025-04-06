@@ -230,14 +230,19 @@ having count(joining_date) > 0;
 
 
 -- 19. Find the number of employees who joined each year.
-
+-- unsolved
 
 
 -- 20. Find the number of employees who joined after 2020, grouped by department.
-
+select department, count(name) as employee_count from employees
+where joining_date > '2020-12-31'
+group by department;
 
 
 -- 21. Find the total salary of employees who joined before 2020, grouped by department.
+select department, sum(salary) as total_salary from employees
+where joining_date < '2020-01-01'
+group by department;
 
 
 
