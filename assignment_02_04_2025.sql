@@ -166,7 +166,6 @@ select department, avg(salary) as average_salary from employees
 group by department
 having avg(salary)> 60000;
 
-
 /*8. Write a query to count employees who joined before 2020, grouped by department.*/
 select department, count(name) as number_of_employees from employees
 where joining_date	< '2020-01-01'
@@ -224,13 +223,14 @@ having min(salary) > 50000;
 
 
 -- 18. Find departments that have at least one employee who joined before 2019.
-
-
-
+select department, count(joining_date) as joining_date_count from employees
+where joining_date < '2019-01-01'
+group by department
+having count(joining_date) > 0;
 
 
 -- 19. Find the number of employees who joined each year.
-
+select 
 
 
 -- 20. Find the number of employees who joined after 2020, grouped by department.
